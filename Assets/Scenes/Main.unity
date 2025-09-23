@@ -119,6 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &89734187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 89734188}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &89734188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 89734187}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &219409084
 GameObject:
   m_ObjectHideFlags: 0
@@ -3994,7 +4025,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &874797235
 Transform:
   m_ObjectHideFlags: 0
@@ -4109,13 +4140,15 @@ GameObject:
   - component: {fileID: 906891978}
   - component: {fileID: 906891979}
   - component: {fileID: 906891980}
+  - component: {fileID: 906891981}
+  - component: {fileID: 906891982}
   m_Layer: 0
   m_Name: Player_Knife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &906891978
 Transform:
   m_ObjectHideFlags: 0
@@ -4204,6 +4237,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RotatePointMouse
   angleOffset: 0
   tipOfTheGun: {fileID: 855321490}
+--- !u!95 &906891981
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906891977}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4aacb951ba5116a4fbd7f53efc23d24b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &906891982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906891977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9c39015f4fc10b45a64a5e8f94f52f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  disableAnimatorTrigger: 0
 --- !u!1 &910491465
 GameObject:
   m_ObjectHideFlags: 0
@@ -119375,6 +119443,7 @@ GameObject:
   - component: {fileID: 1796259450}
   - component: {fileID: 1796259451}
   - component: {fileID: 1796259452}
+  - component: {fileID: 1796259453}
   m_Layer: 0
   m_Name: Player_Shotgun
   m_TagString: Untagged
@@ -119470,6 +119539,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RotatePointMouse
   angleOffset: 0
   tipOfTheGun: {fileID: 219409085}
+--- !u!114 &1796259453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796259449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00d79f646a2c2aa41bb19c1eb99a0692, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  bullet: {fileID: 6888622377879788029, guid: 853d1f536232b914b926e8d0464adc38, type: 3}
+  shootPoint: {fileID: 219409085}
+  bulletSpeed: 20
+  bulletCount: 5
+  spreadAngle: 15
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -119479,3 +119565,4 @@ SceneRoots:
   - {fileID: 260754355}
   - {fileID: 231694105}
   - {fileID: 740399238}
+  - {fileID: 89734188}

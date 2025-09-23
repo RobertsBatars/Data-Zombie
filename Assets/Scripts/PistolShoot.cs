@@ -25,7 +25,7 @@ public class PistolShoot : Weapon
         Rigidbody2D rb = newBullet.GetComponent<Rigidbody2D>();
         // Get 2D forward of the pistol based on rotation
         rb.linearVelocity = shootPoint.right * bulletSpeed; // In 2D, right is considered forward
-        Debug.Log(shootPoint.forward);
-        Debug.Log(rb.linearVelocity);
+        //Debug.Log(shootPoint.forward);
+        //Debug.Log(rb.linearVelocity);
     }
 }
