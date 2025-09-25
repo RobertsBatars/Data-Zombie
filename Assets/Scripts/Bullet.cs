@@ -1,16 +1,31 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public bool isEnemyBullet = false;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.CompareTag("Enemy"))
+        {
+            if (!isEnemyBullet)
+            {
+                Destroy(gameObject); // Destroy if it collides with an enemy
+            }
+        }
+        else if (collision.CompareTag("Player"))
+        {
+            if (isEnemyBullet)
+            {
+                Destroy(gameObject); // Destroy if it collides with the player
+            }
+        }
+        else if (!collision.CompareTag("Bullet"))
+        {
+            // This means it collides with walls or other objects
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
