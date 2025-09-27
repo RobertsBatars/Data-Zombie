@@ -4,6 +4,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public bool isEnemyBullet = false;
+    [SerializeField] private int damage = 10;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -11,6 +12,7 @@ public class Bullet : MonoBehaviour
         {
             if (!isEnemyBullet)
             {
+                collision.GetComponent<EnemyHealth>()?.DamageEnemy(damage);
                 Destroy(gameObject); // Destroy if it collides with an enemy
             }
         }

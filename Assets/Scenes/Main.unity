@@ -119,37 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &89734187
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 89734188}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &89734188
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 89734187}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &219409084
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,8 +162,9 @@ GameObject:
   - component: {fileID: 231694104}
   - component: {fileID: 231694106}
   - component: {fileID: 231694108}
-  - component: {fileID: 231694107}
   - component: {fileID: 231694109}
+  - component: {fileID: 231694107}
+  - component: {fileID: 231694110}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -377,6 +347,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0014738262, y: 0}
   m_Size: {x: 0.11445339, y: 0.16}
   m_Direction: 0
+--- !u!114 &231694110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231694103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8e3d4e53506d6a4f92bf355a5f1b37e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &260754353
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,6 +407,56 @@ Transform:
   - {fileID: 1458903364}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &285351195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 285351196}
+  - component: {fileID: 285351197}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &285351196
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285351195}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &285351197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285351195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33398da7e5fb6054dacf3cc056bae649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  initialPlayerHealth: 100
+  enemyDamageMultiplier: 1
+  enemyHealthMultiplier: 1
+  gameDuration: 0
+  enemiesDefeated: 0
+  isGameOver: 0
 --- !u!1 &502613460
 GameObject:
   m_ObjectHideFlags: 0
@@ -4144,9 +4176,11 @@ GameObject:
   - component: {fileID: 896242265}
   - component: {fileID: 896242264}
   - component: {fileID: 896242263}
+  - component: {fileID: 896242266}
+  - component: {fileID: 896242267}
   m_Layer: 0
   m_Name: Big Zombie
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4371,6 +4405,32 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &896242266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896242258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a10612c9a9ba14fa4943e8780c9bcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  damagePerSecond: 20
+--- !u!114 &896242267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896242258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7b6899dd955734b9eeeea3f619caee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  health: 50
 --- !u!1 &906891977
 GameObject:
   m_ObjectHideFlags: 0
@@ -4558,7 +4618,7 @@ MonoBehaviour:
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
+  logPathResults: 4
   maxNearestNodeDistance: 100
   scanOnStartup: 1
   fullGetNearestSearch: 0
@@ -4679,9 +4739,11 @@ GameObject:
   - component: {fileID: 1047956296}
   - component: {fileID: 1047956295}
   - component: {fileID: 1047956294}
+  - component: {fileID: 1047956297}
+  - component: {fileID: 1047956298}
   m_Layer: 0
   m_Name: Kid Zombie
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4906,6 +4968,32 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &1047956297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047956289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a10612c9a9ba14fa4943e8780c9bcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  damagePerSecond: 10
+--- !u!114 &1047956298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047956289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7b6899dd955734b9eeeea3f619caee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  health: 10
 --- !u!1 &1198488565
 GameObject:
   m_ObjectHideFlags: 0
@@ -9246,9 +9334,11 @@ GameObject:
   - component: {fileID: 1246188872}
   - component: {fileID: 1246188871}
   - component: {fileID: 1246188870}
+  - component: {fileID: 1246188873}
+  - component: {fileID: 1246188874}
   m_Layer: 0
   m_Name: Skinny Zombie
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9473,6 +9563,32 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &1246188873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246188865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8a10612c9a9ba14fa4943e8780c9bcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  damagePerSecond: 10
+--- !u!114 &1246188874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246188865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7b6899dd955734b9eeeea3f619caee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  health: 20
 --- !u!1 &1458903363
 GameObject:
   m_ObjectHideFlags: 0
@@ -120410,8 +120526,8 @@ SceneRoots:
   - {fileID: 260754355}
   - {fileID: 231694105}
   - {fileID: 740399238}
-  - {fileID: 89734188}
   - {fileID: 896242260}
   - {fileID: 1246188867}
   - {fileID: 1047956291}
   - {fileID: 910212585}
+  - {fileID: 285351196}
