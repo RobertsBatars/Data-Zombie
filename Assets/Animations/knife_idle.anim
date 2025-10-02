@@ -42,7 +42,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: disableAnimatorTrigger
+    attribute: animationFinishedTrigger
     path: 
     classID: 114
     script: {fileID: 11500000, guid: f9c39015f4fc10b45a64a5e8f94f52f3, type: 3}
@@ -57,7 +57,7 @@ AnimationClip:
     genericBindings:
     - serializedVersion: 2
       path: 0
-      attribute: 3029806079
+      attribute: 2065866421
       script: {fileID: 11500000, guid: f9c39015f4fc10b45a64a5e8f94f52f3, type: 3}
       typeID: 114
       customType: 0
@@ -111,7 +111,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: disableAnimatorTrigger
+    attribute: animationFinishedTrigger
     path: 
     classID: 114
     script: {fileID: 11500000, guid: f9c39015f4fc10b45a64a5e8f94f52f3, type: 3}

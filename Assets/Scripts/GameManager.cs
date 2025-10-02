@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public int initialPlayerHealth = 100;
     public int enemyDamageMultiplier = 1;
     public int enemyHealthMultiplier = 1;
+    public float EnemiesPerSecondMultiplier = 1f;
 
     // Game statistics
     public float gameDuration = 0; // in seconds
