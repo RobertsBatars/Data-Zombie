@@ -15,6 +15,7 @@ public class EnemySpawner : MonoBehaviour
 
     private List<Transform> spawners;
     private float timeSinceLastSpawn = 0f;
+    private float timeSinceLastSpawnRateIncrease = 0f;
     void Start()
     {
         NormalisePercentages();
@@ -38,6 +39,13 @@ public class EnemySpawner : MonoBehaviour
     {
         int enemiesToSpawn = Mathf.FloorToInt(EnemiesPerSecond * Time.deltaTime + timeSinceLastSpawn);
         Transform spawner;
+
+        timeSinceLastSpawnRateIncrease += Time.deltaTime;
+        if (timeSinceLastSpawnRateIncrease >= 1f)
+        {
+            EnemiesPerSecond *= GameManager.instance.EnemySpawnRateMultiplierPerSecond;
+            timeSinceLastSpawnRateIncrease = 0f;
+        }
 
         if (enemiesToSpawn > 0)
         {

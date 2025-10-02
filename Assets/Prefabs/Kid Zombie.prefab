@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7892faeb46def84448213e716c946223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFollowPlayer
-  speed: 5
+  speed: 6
 --- !u!114 &3744109912607230496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a10612c9a9ba14fa4943e8780c9bcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  damagePerSecond: 10
+  damagePerSecond: 7
 --- !u!114 &7443114826972812298
 MonoBehaviour:
   m_ObjectHideFlags: 0
