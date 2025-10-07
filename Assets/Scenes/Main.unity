@@ -361,6 +361,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b6fdab13305184dbfd6ffd611293fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  pistolPrefab: {fileID: 5861370556366511595, guid: 5f8579a3ec843a546bb6b330f2637439, type: 3}
+  shotgunPrefab: {fileID: 4996362028965102804, guid: be76707e26da31b47ab34d80f82b63bd, type: 3}
+  ammoPrefab: {fileID: 8910004299250525618, guid: 77b3259bce38a0a458768ecae2b0edf4, type: 3}
+  healthPrefab: {fileID: 4691190888398022250, guid: d188906c84e93574e9ab295558340498, type: 3}
+  knifePrefab: {fileID: 288338186235265258, guid: e25d42e1ae334184a8a9384e53c727f5, type: 3}
+  pistolSpawnChance: 0.1
+  shotgunSpawnChance: 0.1
+  ammoSpawnChance: 0.5
+  healthSpawnChance: 0.2
+  knifeSpawnChance: 0.1
+  globalSpawnChance: 0.5
 --- !u!1 &81564638
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,6 +666,7 @@ GameObject:
   - component: {fileID: 231694109}
   - component: {fileID: 231694107}
   - component: {fileID: 231694110}
+  - component: {fileID: 231694111}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -849,6 +861,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e3d4e53506d6a4f92bf355a5f1b37e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!114 &231694111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231694103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a26ea4747b285a4399655ac2f1c2855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  ammoCount: 0
+  pistolObject: {fileID: 874797234}
+  shotgunObject: {fileID: 1796259449}
+  knifeObject: {fileID: 906891977}
 --- !u!1 &248688456
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,6 +1098,9 @@ MonoBehaviour:
   enemyHealthMultiplier: 1
   EnemiesPerSecondMultiplier: 1
   EnemySpawnRateMultiplierPerSecond: 1.01
+  itemSpawnChanceMultiplier: 1
+  healthPickupAmount: 20
+  ammoPickupAmount: 10
   gameDuration: 0
   enemiesDefeated: 0
   isGameOver: 0
@@ -5769,6 +5800,7 @@ MonoBehaviour:
   bullet: {fileID: 6888622377879788029, guid: 853d1f536232b914b926e8d0464adc38, type: 3}
   shootPoint: {fileID: 910491466}
   bulletSpeed: 20
+  playerInventory: {fileID: 231694111}
 --- !u!1 &906891977
 GameObject:
   m_ObjectHideFlags: 0
@@ -122904,6 +122936,7 @@ MonoBehaviour:
   bulletSpeed: 20
   bulletCount: 5
   spreadAngle: 15
+  playerInventory: {fileID: 231694111}
 --- !u!1 &1837423805
 GameObject:
   m_ObjectHideFlags: 0

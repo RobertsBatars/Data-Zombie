@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public int enemyHealthMultiplier = 1;
     public float EnemiesPerSecondMultiplier = 1f;
     public float EnemySpawnRateMultiplierPerSecond = 1.01f; // 1% increase per second
+    public float itemSpawnChanceMultiplier = 1f;
+    public float healthPickupAmount = 20;
+    public int ammoPickupAmount = 10;
 
     // Game statistics
     public float gameDuration = 0; // in seconds

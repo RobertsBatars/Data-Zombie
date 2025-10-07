@@ -3,9 +3,11 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     private int health;
+    private int maxHealth;
     void Start()
     {
         health = GameManager.instance.initialPlayerHealth; // Accessing the parameter
+        maxHealth = health;
     }
 
     public void DamagePlayer(int damageAmount)
@@ -15,5 +17,10 @@ public class PlayerHealth : MonoBehaviour
         {
             GameManager.instance.GameOver();
         }
+    }
+
+    public void AddHealth(int healthAmount)
+    {
+        health = Mathf.Min(health + healthAmount, maxHealth);
     }
 }

@@ -8,6 +8,9 @@ public class ShotgunShoot : Weapon
     [Space]
     [SerializeField] private int bulletCount = 5;
     [SerializeField] private float spreadAngle = 15f; // Total spread angle in degrees
+    [Space(10)]
+    [SerializeField] private PlayerInventory playerInventory;
+
     void Start()
     {
 
@@ -33,7 +36,13 @@ public class ShotgunShoot : Weapon
 
     public override void Attack()
     {
-        for (int i = 0; i < bulletCount; i++)
+        if (playerInventory.AmmoCount <=0)
+            return;
+        
+        int ammoToConsume = Mathf.Min(bulletCount, playerInventory.AmmoCount);
+        playerInventory.RemoveAmmo(ammoToConsume);
+
+        for (int i = 0; i < ammoToConsume; i++)
         {
             // Calculate a random spread angle for each pellet
             float angle = Random.Range(-spreadAngle / 2, spreadAngle / 2);
