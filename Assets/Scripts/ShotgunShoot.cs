@@ -38,9 +38,14 @@ public class ShotgunShoot : Weapon
     {
         if (playerInventory.AmmoCount <=0)
             return;
-        
+
+        if (GameManager.instance.isGameOver)
+            return;
+
         int ammoToConsume = Mathf.Min(bulletCount, playerInventory.AmmoCount);
         playerInventory.RemoveAmmo(ammoToConsume);
+        GameManager.instance.totalWeaponUses++;
+        GameManager.instance.totalAmmoUsed += ammoToConsume;
 
         for (int i = 0; i < ammoToConsume; i++)
         {

@@ -34,6 +34,10 @@ public class KnifeAttack : Weapon
         if (animator.enabled)
             return;
 
+        if (GameManager.instance.isGameOver)
+            return;
+
+        GameManager.instance.totalWeaponUses++;
         animator.enabled = true;
         animator.SetTrigger("knife_attack");
 

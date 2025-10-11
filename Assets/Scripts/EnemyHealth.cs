@@ -15,6 +15,8 @@ public class EnemyHealth : MonoBehaviour
     public void DamageEnemy(int damageAmount)
     {
         health -= damageAmount;
+        GameManager.instance.totalDamageDealt += damageAmount;
+        GameManager.instance.totalTimesEnemiesDamaged++;
         if (health <= 0)
         {
             if (!isDead) 

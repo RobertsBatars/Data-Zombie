@@ -25,7 +25,13 @@ public class PistolShoot : Weapon
     {
         if (playerInventory.AmmoCount <= 0)
             return;
+
+        if (GameManager.instance.isGameOver)
+            return;
+
         playerInventory.RemoveAmmo(1);
+        GameManager.instance.totalAmmoUsed++;
+        GameManager.instance.totalWeaponUses++;
         GameObject newBullet = Instantiate(bullet, shootPoint.position, shootPoint.rotation);
         Rigidbody2D rb = newBullet.GetComponent<Rigidbody2D>();
         // Get 2D forward of the pistol based on rotation
