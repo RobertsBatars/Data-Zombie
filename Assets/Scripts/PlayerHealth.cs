@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
     public void DamagePlayer(int damageAmount)
     {
         health -= damageAmount;
+        GameManager.instance.playerCurrentHealth = Mathf.Max(health, 0);
         healthSlider.value = health;
         GameManager.instance.totalDamageTaken += Mathf.Min(damageAmount, health + damageAmount); // Only count damage that actually reduces health
         if (health <= 0)
@@ -31,5 +32,6 @@ public class PlayerHealth : MonoBehaviour
         health = Mathf.Min(health + healthAmount, maxHealth);
         healthSlider.value = health;
         GameManager.instance.totalHealthRecovered += healthAdded;
+        GameManager.instance.playerCurrentHealth = health;
     }
 }

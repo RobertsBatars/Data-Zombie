@@ -8,7 +8,7 @@ public class EnemyHealth : MonoBehaviour
     private bool isDead = false;
     void Start()
     {
-        health *= GameManager.instance.enemyHealthMultiplier;
+        health = (int)(health * GameManager.instance.enemyHealthMultiplier);
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 

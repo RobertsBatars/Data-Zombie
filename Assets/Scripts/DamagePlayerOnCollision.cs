@@ -7,7 +7,7 @@ public class DamagePlayerOnCollision : MonoBehaviour
     private float timeSinceLastDamage = 0f;
     void Start()
     {
-        damagePerSecond *= GameManager.instance.enemyDamageMultiplier;
+        damagePerSecond = (int)(damagePerSecond * GameManager.instance.enemyDamageMultiplier);
     }
 
     // Update is called once per frame
