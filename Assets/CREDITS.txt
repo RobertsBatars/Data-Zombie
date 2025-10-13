@@ -1,0 +1,2 @@
+tileset and visual assets - https://ittaimanero.itch.io/zombie-apocalypse-tileset
+pathfinding - https://arongranberg.com/astar/
