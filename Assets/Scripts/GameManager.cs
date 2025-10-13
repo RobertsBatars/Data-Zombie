@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Slider timeSlider;
     [SerializeField] private TMP_Text killsText;
     [SerializeField] private TMP_Text killsTextGameOverScreen;
+    [SerializeField] private TMP_Text fileLocText;
 
     [Space(10)]
     [Header("Difficulty Parameters")]
@@ -69,6 +70,10 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         timeSlider.maxValue = sessionTimeSeconds;
         timeSlider.value = sessionTimeSeconds;
+        if (DataLogger.instance != null)
+        {
+            fileLocText.text = "You can find the data file at:\n" + DataLogger.instance.FilePath;
+        }
     }
 
     public void StartGame()
