@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public float itemSpawnChanceMultiplier = 1f;
     public float healthPickupAmount = 20;
     public int ammoPickupAmount = 10;
+    public float playerSpeed = 10f;
 
     [Space(10)]
     [Header("Session Statistics")]

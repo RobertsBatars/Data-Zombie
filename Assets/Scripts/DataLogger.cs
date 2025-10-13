@@ -42,7 +42,8 @@ public class DataLogger : MonoBehaviour
             dm.enemySpawnRateMultiplierPerSecond,
             dm.itemSpawnChanceMultiplier,
             dm.healthPickupAmount,
-            dm.ammoPickupAmount
+            dm.ammoPickupAmount,
+            dm.playerSpeed
         };
 
         // --- 2. Get all Player Performance Stats ---
@@ -65,7 +66,7 @@ public class DataLogger : MonoBehaviour
         var allValues = diffParams.Concat(perfStats).Concat(new object[] { playerFeedback }).ToArray();
 
         // --- 4. Format to CSV and Append to File ---
-        string header = "enemyDamageMultiplier,enemyHealthMultiplier,enemiesPerSecondMultiplier,enemySpawnRateMultiplierPerSecond,itemSpawnChanceMultiplier,healthPickupAmount,ammoPickupAmount," +
+        string header = "enemyDamageMultiplier,enemyHealthMultiplier,enemiesPerSecondMultiplier,enemySpawnRateMultiplierPerSecond,itemSpawnChanceMultiplier,healthPickupAmount,ammoPickupAmount,playerSpeed," +
                         "gameDuration,enemiesDefeated,totalDamageDealt,totalDamageTaken,totalHealthRecovered,totalAmmoCollected,totalAmmoUsed,totalWeaponUses,totalTimesEnemiesDamaged,playerCurrentHealth," +
                         "playerFeedback\n";
 

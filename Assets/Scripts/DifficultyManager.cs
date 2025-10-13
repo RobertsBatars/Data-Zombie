@@ -14,6 +14,7 @@ public class DifficultyManager : MonoBehaviour
     public float itemSpawnChanceMultiplier;
     public float healthPickupAmount;
     public int ammoPickupAmount;
+    public float playerSpeed;
 
     // You can tweak these ranges in the Inspector to control the experiment.
     [Header("Randomization Ranges")]
@@ -24,6 +25,7 @@ public class DifficultyManager : MonoBehaviour
     [SerializeField] private Vector2 itemChanceRange = new Vector2(0.4f, 2.5f);
     [SerializeField] private Vector2 healthPickupRange = new Vector2(10f, 50f);
     [SerializeField] private Vector2Int ammoPickupRange = new Vector2Int(5, 40);
+    [SerializeField] private Vector2 playerSpeedRange = new Vector2(3f, 15f);
 
     private void Awake()
     {
@@ -53,6 +55,7 @@ public class DifficultyManager : MonoBehaviour
         itemSpawnChanceMultiplier = Random.Range(itemChanceRange.x, itemChanceRange.y);
         healthPickupAmount = Random.Range(healthPickupRange.x, healthPickupRange.y);
         ammoPickupAmount = Random.Range(ammoPickupRange.x, ammoPickupRange.y + 1);
+        playerSpeed = Random.Range(playerSpeedRange.x, playerSpeedRange.y);
 
         // 2. Apply these randomized values to the GameManager's public variables.
         gm.enemyDamageMultiplier = this.enemyDamageMultiplier;
@@ -62,6 +65,7 @@ public class DifficultyManager : MonoBehaviour
         gm.itemSpawnChanceMultiplier = this.itemSpawnChanceMultiplier;
         gm.healthPickupAmount = this.healthPickupAmount;
         gm.ammoPickupAmount = this.ammoPickupAmount;
+        gm.playerSpeed = this.playerSpeed;
 
         Debug.Log("New difficulty parameters randomized and applied to GameManager.");
     }

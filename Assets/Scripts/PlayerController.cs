@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        speed = GameManager.instance.playerSpeed;
     }
 
     void Update()
