@@ -1735,6 +1735,7 @@ MonoBehaviour:
   itemSpawnChanceMultiplier: 1
   healthPickupAmount: 20
   ammoPickupAmount: 10
+  playerSpeed: 5
   gameDuration: 0
   enemiesDefeated: 0
   totalDamageDealt: 0
@@ -126541,6 +126542,7 @@ MonoBehaviour:
   itemSpawnChanceMultiplier: 0
   healthPickupAmount: 0
   ammoPickupAmount: 0
+  playerSpeed: 0
   enemyDamageMultiplierRange: {x: 0.3, y: 3}
   enemyHealthMultiplierRange: {x: 0.2, y: 3}
   enemiesPerSecondRange: {x: 0.3, y: 2}
@@ -126548,6 +126550,7 @@ MonoBehaviour:
   itemChanceRange: {x: 0.1, y: 1}
   healthPickupRange: {x: 5, y: 50}
   ammoPickupRange: {x: 5, y: 50}
+  playerSpeedRange: {x: 2, y: 15}
 --- !u!4 &1893966195
 Transform:
   m_ObjectHideFlags: 0
